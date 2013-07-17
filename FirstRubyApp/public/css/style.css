@@ -1,0 +1,20 @@
+input.my_input {
+    margin: 0 0 10px 0;
+}
+
+table.users_list{
+    border: 1px solid chocolate;
+    margin: 0 0 20px 0;
+}
+
+table.users_list td{
+    padding: 5px 10px;
+}
+
+.search{
+    padding: 15px 0 0 0;
+}
+
+.margin{
+    margin-top: 15px;
+}

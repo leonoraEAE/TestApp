@@ -1,0 +1,47 @@
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+
+puts "Hello World"
+
+##
+# var’ = vari´avel local, 
+# @var’ = vari´avel de instˆancia,
+# $var’= vari´avel global.
+#
+#
+# preciados ?
+# falha em metodo devolver nil
+#
+#
+#
+#
+#
+# << mais rapido que + += na concatenação de strings
+# 
+# 
+# 
+##
+
+=begin
+
+var = var
+@var = instancia
+@@var = de classe
+$var = global
+
+alias :teste_antigo :teste
+
+classe ﬁlha < classe pai?
+
+
+serial/deep copy---- Marshal.load(Marshal.dump(n2))
+
+visibility ----
+private :method_name
+public :method_name
+protected :method_name
+
+adding modules ----
+require "singleton"
+
+=end
