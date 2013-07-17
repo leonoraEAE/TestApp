@@ -1,48 +1,3 @@
-# myapp.rb
-
-
-=begin
-
-require 'sinatra'
-require 'json'
-require 'haml'
-set :haml, { :format => :html5 }
-use Rack::Logger
-
-set :root, File.expand_path(File.dirname(__FILE__) + '/../../')
-
-helpers do
-  def logger
-    request.logger
-  end
-end
-
-before '/myApp' do
-  request_ip = request.ip
-  request_path = request.path
-  puts "#{request_ip} to #{request_path}"
-end
-
-get '/myApp' do
-  logger.info "matched /myApp/*"
-  @owner = "Leonora" 
-  # Render our Index template
-  #erb :new_view
-  haml :my_index
-end
-
-get '/example.json' do
-  content_type :json
-  [{ :id => 1, :name => 'Foo' }].to_json
-end
-
-error do
-  'ERROR - ' + env['sinatra.error'].name
-end
-
-=end
-
-
 require 'json'
 require 'haml'
 require "rubygems"
@@ -51,20 +6,9 @@ require 'couchrest'
 require 'couchrest_model'
 require 'rest_client'
 
+module App
 Couch = CouchRest.new("http://admin:admin@localhost:5984")
 DB = Couch.database('test_db')
-
-
-class User < CouchRest::Model::Base
-  use_database DB
-  
-  property :name
-  property :phone
-  property :email
-  
-  view_by :name, :email
-  
-end
 
 
 class MyApp < Sinatra::Base
@@ -120,9 +64,13 @@ class MyApp < Sinatra::Base
     puts "#{params[:name]} - #{params[:email]} - #{params[:phone]}"
     attributes = { "name" => params[:name], 
                    "email" => params[:email], 
-                   "phone" => params[:phone]}
+                   "phone" => params[:phone], 
+                   "type" => "User"
+                   }
     #create user
-    User.create(attributes)
+    #User.create(attributes)
+    
+    Models::Base::save attributes
     redirect '/myApp'
   end
     
@@ -176,3 +124,7 @@ class MyApp < Sinatra::Base
   # start the server if ruby file executed directly
   # run! if app_file == $0
 end
+end
+
+require_relative './models/base'
+require_relative './models/user'

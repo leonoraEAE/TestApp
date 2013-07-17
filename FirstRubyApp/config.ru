@@ -3,5 +3,5 @@ require './lib/main.rb'
 
 
 map "/" do
-    run MyApp
+    run App::MyApp
 end
