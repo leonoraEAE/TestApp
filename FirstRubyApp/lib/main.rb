@@ -51,9 +51,8 @@ require 'couchrest'
 require 'couchrest_model'
 require 'rest_client'
 
-#Couch = CouchRest.new("http://admin:admin@localhost:5984")
-Couch = CouchRest.new("http://mudynamics:0xVGHvbhwfMTsQhvbSWZJ@ec2-177-71-145-216.sa-east-1.compute.amazonaws.com")
-DB = Couch.database('test')
+Couch = CouchRest.new("http://admin:admin@localhost:5984")
+DB = Couch.database('test_db')
 
 
 class User < CouchRest::Model::Base
