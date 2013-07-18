@@ -6,11 +6,15 @@ class Base
         DB.save_doc doc
     end
     
-    def update 
-       DB.update_doc self.id do |_doc|
-            yield _doc
-            _doc
+    def Base.update(doc, id)
+       DB.update_doc id do |doc|
+            yield doc
+            doc
         end
+    end
+    
+    def Base.delete doc
+      DB.delete_doc doc
     end
 end
 end

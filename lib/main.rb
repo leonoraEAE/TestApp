@@ -95,6 +95,7 @@ class MyApp < Sinatra::Base
       _doc
     end
     
+    
     "ok".to_json
   end
   
@@ -104,7 +105,8 @@ class MyApp < Sinatra::Base
     "delete: #{id}"
      doc = { "_id" => params[:id], 
              "_rev" => params[:rev]}
-    DB.delete_doc(doc)
+    
+    Models::Base::delete doc
     #redirect '/myApp'
   end
   
