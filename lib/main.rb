@@ -7,8 +7,8 @@ require 'couchrest_model'
 require 'rest_client'
 
 module App
-Couch = CouchRest.new("http://admin:admin@localhost:5984")
-DB = Couch.database('test_db')
+Couch = CouchRest.new(ENV['COUCHDB_URL'] || "http://admin:admin@localhost:5984")
+DB = Couch.database(ENV['DB_NAME'] || 'test_db')
 
 
 class MyApp < Sinatra::Base
@@ -113,6 +113,10 @@ class MyApp < Sinatra::Base
   get '/myApp' do
     # Render our Index template
     haml :my_index, :locals => {:ip => request.ip}
+  end
+  
+  get '/' do
+    redirect '/myApp'
   end
 
   
