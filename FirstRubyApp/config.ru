@@ -1,5 +1,7 @@
+$: << File.expand_path(File.dirname(__FILE__) + "/lib")
+
 # config.ru (run with rackup)
-require './lib/main.rb'
+require 'main'
 
 
 map "/" do
