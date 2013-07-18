@@ -126,6 +126,9 @@ class MyApp < Sinatra::Base
     'ERROR - ' + env['sinatra.error'].name
   end
   
+  get '/mu-e36d3723-2a3b7825-454f166b-db6e0dd4' do
+  '42'
+  end
   
   # start the server if ruby file executed directly
   # run! if app_file == $0
