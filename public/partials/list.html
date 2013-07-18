@@ -1,0 +1,16 @@
+<!--<p ng-show="users.length == 0">There are no contacts here!</p>-->
+
+<div class="search"> 
+    <span class="searchtext">Search:</span> 
+    <input ng-model="criteria" placeholder="Search for user...">
+</div>      
+<table class="users_list" ng-controller="AppListController">
+      <tr ng-repeat="user in users | filter: criteria | orderBy:'name'">
+            <td>{{user.value.name}}</td>
+            <td>{{user.value.email}}</td>
+            <td>{{user.value.phone}}</td>
+            <td>[<a href="/myApp/users/delete/{{user.value._id}}/{{user.value._rev}}">remove by link</a>]</td>
+            <td>[<a href="#/remove/{{user.value._id}}/{{user.value._rev}}">remove by factory</a>]</td>
+            <td>[<a href="#/reset/{{user.value._id}}/{{user.value._rev}}">reset user </a>]</td>
+          </tr>
+</table>
