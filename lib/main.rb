@@ -130,6 +130,10 @@ class MyApp < Sinatra::Base
   '42'
   end
   
+  get '/mu-db0434f2-63bb009a-cf44430d-efc6bc7d' do
+  '42'
+  end
+  
   # start the server if ruby file executed directly
   # run! if app_file == $0
 end
