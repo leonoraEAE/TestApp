@@ -127,11 +127,15 @@ class MyApp < Sinatra::Base
   end
   
   get '/mu-e36d3723-2a3b7825-454f166b-db6e0dd4' do
-  '42'
+    '42'
   end
   
   get '/mu-db0434f2-63bb009a-cf44430d-efc6bc7d' do
-  '42'
+    '42'
+  end
+  
+  get '/mu-b4c7609f-83170c27-3e4fef09-22193488' do
+    '42'
   end
   
   # start the server if ruby file executed directly
