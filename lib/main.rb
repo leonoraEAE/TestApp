@@ -5,6 +5,7 @@ require 'sinatra/base'
 require 'couchrest'
 require 'couchrest_model'
 require 'rest_client'
+require 'newrelic_rpm'
 
 module App
 Couch = CouchRest.new(ENV['COUCHDB_URL'] || "http://admin:admin@localhost:5984")
@@ -12,9 +13,6 @@ DB = Couch.database(ENV['DB_NAME'] || 'test_db')
 
 
 class MyApp < Sinatra::Base
-  configure :production do
-    require 'newrelic_rpm'
-  end
   
   set :root, File.expand_path(File.dirname(__FILE__) + '/../')
 
