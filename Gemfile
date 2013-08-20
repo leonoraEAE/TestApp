@@ -15,6 +15,7 @@ gem 'rspec', '2.6.0'
 gem 'rspec-core', '2.6.4'
 
 gem 'rack-test', '>= 0.6.0'
+gem 'newrelic_rpm'
 
 group :test do
     gem 'nokogiri', '1.4.4'
