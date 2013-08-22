@@ -5,6 +5,7 @@ require 'sinatra/base'
 require 'couchrest'
 require 'couchrest_model'
 require 'rest_client'
+require 'newrelic_rpm'
 
 module App
 Couch = CouchRest.new(ENV['COUCHDB_URL'] || "http://admin:admin@localhost:5984")
@@ -27,6 +28,7 @@ class MyApp < Sinatra::Base
   
   
   get '/myApp/users/all' do
+    STDOUT.puts production?
     STDOUT.puts "RPM detected environment: #{NewRelic::LocalEnvironment.new}"
     return
     content_type :json
