@@ -5,7 +5,6 @@ require 'sinatra/base'
 require 'couchrest'
 require 'couchrest_model'
 require 'rest_client'
-require 'newrelic_rpm'
 
 module App
 Couch = CouchRest.new(ENV['COUCHDB_URL'] || "http://admin:admin@localhost:5984")
@@ -13,16 +12,11 @@ DB = Couch.database(ENV['DB_NAME'] || 'test_db')
 
 
 class MyApp < Sinatra::Base
-  qq = 2
-  configure :production do
-    require 'newrelic_rpm'
-    qq = "here"
-  end
   set :root, File.expand_path(File.dirname(__FILE__) + '/../')
-
   
   #before filter
   before '/myApp' do
+    require 'newrelic_rpm'
     request_ip = request.ip
     request_path = request.path
     puts "#{request_ip} to #{request_path}"
@@ -31,7 +25,7 @@ class MyApp < Sinatra::Base
   
   get '/myApp/users/all' do
     #prod = production?
-    STDOUT.puts "production? ==> #{qq}"
+    #STDOUT.puts "production? ==> #{qq}"
     STDOUT.puts "RPM detected environment: #{NewRelic::LocalEnvironment.new}"
     return
     content_type :json
