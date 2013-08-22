@@ -13,8 +13,10 @@ DB = Couch.database(ENV['DB_NAME'] || 'test_db')
 
 
 class MyApp < Sinatra::Base
+  qq = 2
   configure :production do
     require 'newrelic_rpm'
+    qq = "here"
   end
   set :root, File.expand_path(File.dirname(__FILE__) + '/../')
 
@@ -28,8 +30,8 @@ class MyApp < Sinatra::Base
   
   
   get '/myApp/users/all' do
-    prod = production?
-    STDOUT.puts "production? ==> #{prod}"
+    #prod = production?
+    STDOUT.puts "production? ==> #{qq}"
     STDOUT.puts "RPM detected environment: #{NewRelic::LocalEnvironment.new}"
     return
     content_type :json
