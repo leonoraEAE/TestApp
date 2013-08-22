@@ -28,7 +28,8 @@ class MyApp < Sinatra::Base
   
   
   get '/myApp/users/all' do
-    STDOUT.puts production?
+    prod = production?
+    STDOUT.puts "production? ==> #{prod}"
     STDOUT.puts "RPM detected environment: #{NewRelic::LocalEnvironment.new}"
     return
     content_type :json
