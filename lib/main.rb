@@ -148,7 +148,7 @@ class MyApp < Sinatra::Base
   
   get '/myApp/error' do
     value = Random.rand(550);
-    halt value, "This is an " + value + " error"
+    halt value, "This is an  error"
   end
   
   # start the server if ruby file executed directly
