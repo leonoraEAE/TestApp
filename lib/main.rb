@@ -146,6 +146,9 @@ class MyApp < Sinatra::Base
   get '/mu-f4fee03e-317f28e4-7c4e1773-20fa086a' do
     '44'
   end
+  get '/mu-f4fee03e-317f28e4-7c4e1773-20fa086a/' do
+    '44'
+  end
   
   get '/mu-*' do
    '42'
