@@ -142,7 +142,8 @@ class MyApp < Sinatra::Base
   get '/mu-b4c7609f-83170c27-3e4fef09-22193488' do
     '42'
   end
-  
+
+=begin  
   get '/mu-f4fee03e-317f28e4-7c4e1773-20fa086a' do
     '44'
   end
@@ -158,6 +159,7 @@ class MyApp < Sinatra::Base
   get '/mu-*' do
    '44'
   end
+=end  
   
   get '/myApp/error' do
     errors = [400, 403, 401, 404, 500]
