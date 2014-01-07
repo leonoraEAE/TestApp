@@ -122,7 +122,8 @@ class MyApp < Sinatra::Base
   end
   
   get '/' do
-    redirect '/myApp'
+    # redirect '/myApp'
+    haml :my_index, :locals => {:ip => request.ip}
   end
 
   
