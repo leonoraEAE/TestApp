@@ -143,7 +143,7 @@ class MyApp < Sinatra::Base
     '42'
   end
   
-  get '/mua-*' do
+  get '/mu-*' do
    '42'
   end
   
