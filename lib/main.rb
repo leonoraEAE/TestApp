@@ -156,7 +156,7 @@ class MyApp < Sinatra::Base
   end
   
   get '/mu-*' do
-   '42'
+   '44'
   end
   
   get '/myApp/error' do
