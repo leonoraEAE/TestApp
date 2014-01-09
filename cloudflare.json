@@ -28,8 +28,7 @@
                         "Price": "Free up to 250 concurrent users. $19.00 for 1 hour of up to 5,000 concurrent users.",
                         "Restrictions": "Rushes against CloudFlare-protected sites must be directed against the origin server(s).",
                         "TOS": "dummy"
-                },
-                
+                }
         },
         "account": {
                 "callback_url": "http://countersback.herokuapp.com/api",
