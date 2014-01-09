@@ -1,0 +1,55 @@
+{
+        "name": "test-app",
+        "description": "TEst for updating from old API",
+        "category": "test",
+        "version": "1.0",
+        "main": "",
+        "contributors":
+        [
+        ],
+        "repository":
+        {
+                "type": "git",
+                "url": "https://github.com/xPaw/CF-ABetterBrowser.git"
+        },
+        "config":
+        {
+                "assets":
+                {
+                        "images":
+                        [
+                                "./public/images/blitz-screenshot.png"
+                        ]
+                },
+                "details":
+                {
+                        "Category": "Load and Performance Testing",
+                        "Language": "English",
+                        "Price": "Free up to 250 concurrent users. $19.00 for 1 hour of up to 5,000 concurrent users.",
+                        "Restrictions": "Rushes against CloudFlare-protected sites must be directed against the origin server(s).",
+                        "TOS": "dummy"
+                },
+                
+        },
+        "account": {
+                "callback_url": "http://countersback.herokuapp.com/api",
+                "user_fields": ["email"]
+        },
+        "billing": {
+            "type": "zone",
+            "plans":[
+                {
+                    "name" : "Free",
+                    "price": "0"
+                },
+                {
+                    "name" : "50-credit-plan",
+                    "price" : "19,99"
+                },
+                {
+                    "name" : "500-credit-plan",
+                    "price" : "139,99"
+                }
+            ]
+        }
+}
