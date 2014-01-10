@@ -48,16 +48,12 @@
             "type": "zone",
             "plans":[
                 {
-                    "name" : "10-credit-plan",
-                    "price": "1"
-                },
-                {
                     "name" : "50-credit-plan",
-                    "price" : "19,99"
+                    "price" : "9,99"
                 },
                 {
                     "name" : "500-credit-plan",
-                    "price" : "139,99"
+                    "price" : "34,99"
                 }
             ]
         }
