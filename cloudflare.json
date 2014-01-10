@@ -1,6 +1,6 @@
 {
-        "name": "test-app",
-        "description": "TEst for updating from old API",
+        "name": "blitz-with-pricing",
+        "description": "Test for updating from old API",
         "category": "test",
         "version": "1.0",
         "main": "",
@@ -20,7 +20,17 @@
                         [
                                 "./public/images/blitz-screenshot.png"
                         ]
-                },
+               },
+                "interface": [
+                    {
+                        "type": "string",
+                        "id": "domain_hash",
+                        "name": "direct domain hash",
+                        "description": "Please insert your cloudflare's direct domain hash",
+                        "domain_request": true,
+                        "private": true
+                    }
+                ],
                 "details":
                 {
                         "Category": "Load and Performance Testing",
@@ -31,15 +41,15 @@
                 }
         },
         "account": {
-                "callback_url": "http://countersback.herokuapp.com/api",
+                "callback_url": "http://staging.blitz.io/cloudflare/resources",
                 "user_fields": ["email"]
         },
         "billing": {
             "type": "zone",
             "plans":[
                 {
-                    "name" : "Free",
-                    "price": "0"
+                    "name" : "10-credit-plan",
+                    "price": "1"
                 },
                 {
                     "name" : "50-credit-plan",
