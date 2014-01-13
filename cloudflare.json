@@ -1,8 +1,8 @@
 {
         "name": "blitz-with-pricing",
         "description": "Test for updating from old API",
-        "category": "testing",
-        "version": "2.0",
+        "category": "analytics",
+        "version": "2.1",
         "main": "",
         "contributors":
         [
