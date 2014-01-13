@@ -1,7 +1,7 @@
 {
         "name": "blitz-with-pricing",
         "description": "Test for updating from old API",
-        "category": "test",
+        "category": "testing",
         "version": "1.0",
         "main": "",
         "contributors":
@@ -42,7 +42,7 @@
         },
         "account": {
                 "callback_url": "http://dev4.akisel.ru:9205/cloudflare/resources",
-                "user_fields": ["email", "zone", "tokens"]
+                "user_fields": ["email"]
         },
         "billing": {
             "type": "zone",
